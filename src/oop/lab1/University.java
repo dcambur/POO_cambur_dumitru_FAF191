@@ -1,6 +1,5 @@
-package oop.pack;
+package oop.lab1;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 

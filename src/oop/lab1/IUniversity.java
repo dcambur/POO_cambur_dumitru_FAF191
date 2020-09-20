@@ -1,4 +1,4 @@
-package oop.pack;
+package oop.lab1;
 
 public interface IUniversity {
     void PrintInfo();
