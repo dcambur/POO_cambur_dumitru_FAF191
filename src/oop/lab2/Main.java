@@ -15,9 +15,11 @@ public class Main {
         box3.printArea();
         box3.printVolume();
 
-        Queue queue = new Queue(box1);
+        Queue queue = new Queue(2);
+        queue.enqueue(box1);
         queue.enqueue(box2);
         queue.enqueue(box3);
+
         queue.printElements();
 
         queue.dequeue();
