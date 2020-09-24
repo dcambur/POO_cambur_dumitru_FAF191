@@ -28,5 +28,10 @@ public class Main {
         queue.isEmpty();
         queue.dequeue();
         queue.dequeue();
+
+
+        Queue queue1 = new Queue();
+        queue1.enqueue(box1);
+        queue1.printElements();
     }
 }
