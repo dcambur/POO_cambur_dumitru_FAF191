@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class Queue {
     private LinkedList<Box> Queue_List = new LinkedList<>();
-    private int Size;
+    private int Size = 1;
 
     public Queue() {
     }
