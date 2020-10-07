@@ -20,7 +20,7 @@ public class Main {
         System.out.println("Sentence Number: " + check.sentenceNumber());
         System.out.println("Word Count: " + check.wordCount());
         System.out.println("Letter Count: " + check.letterLength());
-
+        check.frequencyTop(5);
         long end = System.nanoTime();
         long execution = (end - start)/1_000_000_000;
         System.out.println("Execution time: " + execution + " seconds");

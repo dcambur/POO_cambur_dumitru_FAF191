@@ -2,8 +2,12 @@ package oop.lab3;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashSet;
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toMap;
 
 public class Checker {
     private String Path;
@@ -26,12 +30,24 @@ public class Checker {
         return count;
     }
 
-    public int frequencyTop(int n) {
+    public void frequencyTop(int n) {
         String text = scanFile();
         String[] splitWords = text.split("[ .,?!\n;:']+");
-        EqualWords[] equalsFreq;
-        for (String splitWord: splitWords) {
-            if (splitWord )
+        Map<String, Long> miniMap = new HashMap<>();
+        for (String splitWord : splitWords) {
+            miniMap.compute(splitWord, (k, v) -> v == null ? 1 : v + 1);
+        }
+        int count = 0;
+        Map<String, Long> sortedMiniMap = miniMap
+                .entrySet()
+                .stream()
+                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+                .collect(toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2,
+                        LinkedHashMap::new));
+        for (Map.Entry<String, Long> entry : sortedMiniMap.entrySet()) {
+            if (count >= n) { break; }
+            System.out.println(entry.getKey() + " : " + "Counted " + entry.getValue());
+            count++;
         }
     }
     private String scanFile() {
