@@ -29,7 +29,35 @@ public class Checker {
         }
         return count;
     }
+    public int countVowels() {
+        String text = scanFile();
+        String[] splitWords = text.split("[ .,?!\n;:']+");
+        int vcount = 0;
+        for (String word : splitWords) {
+            for (int i = 0; i < word.length(); i++) {
+                if (word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' ||
+                        word.charAt(i) == 'u') {
+                    vcount++;
+                }
+            }
+        }
+        return vcount;
+    }
 
+    public int countConsonants() {
+        String text = scanFile();
+        String[] splitWords = text.split("[ .,?!\n;:']+");
+        int ccount = 0;
+        for (String word : splitWords) {
+            for (int i = 0; i < word.length(); i++) {
+                if (!(word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' ||
+                        word.charAt(i) == 'u') && (Character.isLetter(word.charAt(i)))) {
+                    ccount++;
+                }
+            }
+        }
+        return ccount;
+    }
     public void frequencyTop(int n) {
         String text = scanFile();
         String[] splitWords = text.split("[ .,?!\n;:']+");
