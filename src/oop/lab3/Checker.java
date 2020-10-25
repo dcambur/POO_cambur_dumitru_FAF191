@@ -80,9 +80,8 @@ public class Checker {
     }
     private String scanFile() {
         File file = new File(this.Path);
-        Scanner scan = null;
         try {
-            scan = new Scanner(file);
+            Scanner scan = new Scanner(file);
             StringBuilder info = new StringBuilder();
             while (scan.hasNextLine()) {
                 info.append(scan.nextLine()).append("\n");
@@ -116,5 +115,4 @@ public class Checker {
     public void setPath(String path) {
         this.Path = path;
     }
-
 }
