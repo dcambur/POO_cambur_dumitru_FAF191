@@ -13,7 +13,7 @@ public class Main {
         File express2 = new File("/home/dima/IdeaProjects/oop_labs/src/oop/lab4/three_expressions.txt");
 
         // Change express variable in scanner to change file with expression/expressions.
-        Scanner scanExpression = new Scanner(express1);
+        Scanner scanExpression = new Scanner(express2);
         String expressionOutput;
 
         while (scanExpression.hasNextLine()) {
